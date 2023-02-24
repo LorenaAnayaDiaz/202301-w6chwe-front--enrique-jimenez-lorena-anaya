@@ -36,3 +36,7 @@ ul {
   font-family: "Stjldbl2";
   src: local("Stjldbl2"), url(./assets/fonts/Stjldbl2.ttf) format(truetype);
 }
+@font-face {
+  font-family: "Orbitron";
+  src: local("Orbitron"), url(./assets/fonts/Orbitron.ttf) format(truetype);
+}
