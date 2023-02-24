@@ -1,6 +1,6 @@
-# Star Wars Robots Web Application
+# Star Wars Robots Web Application - FRONT END
 
-This a React with Redux and Typescript web application that consumes an API with robots from Star Wars.
+This a React with Redux and Typescript Front End for a web application that consumes an API with robots from Star Wars.
 The main features of this application are:
 -The user can see a collection of robots.
 -The user can create robots.
