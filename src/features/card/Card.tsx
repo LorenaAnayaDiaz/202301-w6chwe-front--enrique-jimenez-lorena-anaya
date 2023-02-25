@@ -24,7 +24,7 @@ export function Card() {
         </div>
         <div className={styles.properties}>
           <span className={styles.property}>Date:</span>
-          <span className={styles.property__name}> {robot.creationDate}</span>
+          <span className={styles.property__name}> {robot.date}</span>
         </div>
       </div>
     </div>

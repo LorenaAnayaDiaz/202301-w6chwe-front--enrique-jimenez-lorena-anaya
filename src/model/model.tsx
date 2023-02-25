@@ -4,5 +4,5 @@ export const robot = {
   name: "R2-D2",
   speed: 4.5,
   endurance: 8,
-  creationDate: "2023-02-24",
+  date: "2023-02-24",
 };
