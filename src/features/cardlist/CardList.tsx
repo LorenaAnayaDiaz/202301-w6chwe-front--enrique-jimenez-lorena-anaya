@@ -11,7 +11,7 @@ const CardList = () => {
 
   useEffect(() => {
     dispatch(fetchRobots());
-  }, []);
+  }, [dispatch, robots]);
 
   return (
     <div>
