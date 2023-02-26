@@ -6,9 +6,6 @@ export const getRobotsList = async () => {
     {
       method: "GET",
       mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
     }
   );
   const robotsList: Robot[] = await response.json();
