@@ -1,7 +1,12 @@
 import styles from "./Card.module.css";
-import { robot } from "../../model/model";
+import { Robot } from "../../model/robot.model";
+import { FC } from "react";
 
-export function Card() {
+interface CardProps {
+  robot: Robot;
+}
+
+export const Card: FC<CardProps> = ({ robot }) => {
   return (
     <div className={styles.container}>
       <img
@@ -29,4 +34,4 @@ export function Card() {
       </div>
     </div>
   );
-}
+};
