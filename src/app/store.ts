@@ -13,7 +13,7 @@ export const store = configureStore({
         // Ignore these field paths in all actions
         ignoredActionPaths: ["meta.arg"],
         // Ignore these paths in the state
-        ignoredPaths: ["cardList.robots.0.date"],
+        ignoredPaths: ["cardList.robots"],
       },
     }),
 });
