@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getRobotsList } from "./cardlistAPI";
-import { Robot } from "../../model/robot.model";
+
 import { RootState } from "../../app/store";
+import { Robot } from "../../model/robot.model";
 
 export interface CardListState {
   robots: Robot[];

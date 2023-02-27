@@ -1,6 +1,7 @@
 import styles from "./Card.module.css";
-import { Robot } from "../../model/robot.model";
+
 import { FC } from "react";
+import { Robot } from "../../model/robot.model";
 
 interface CardProps {
   robot: Robot;
@@ -29,7 +30,11 @@ export const Card: FC<CardProps> = ({ robot }) => {
         </div>
         <div className={styles.properties}>
           <span className={styles.property}>Date:</span>
-          <span className={styles.property__name}> {robot.date}</span>
+          <span className={styles.property__name}>
+            {" "}
+            {robot.date.getDate()} / {robot.date.getMonth()} /{" "}
+            {robot.date.getFullYear()}
+          </span>
         </div>
       </div>
     </div>
