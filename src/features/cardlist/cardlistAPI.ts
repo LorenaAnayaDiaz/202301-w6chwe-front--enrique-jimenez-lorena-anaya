@@ -5,9 +5,10 @@ export const getRobotsList = async () => {
     `https://two02301-w6chwe-back-enrique-lorena.onrender.com/api/v1/robots`
   );
   const robotsList: RobotResponse[] = await response.json();
-
-  return robotsList.map((robot) => ({
+  const newRobotsList = robotsList.map((robot) => ({
     ...robot,
     date: new Date(robot.date),
   }));
+
+  return newRobotsList;
 };

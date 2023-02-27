@@ -32,9 +32,8 @@ export const Card: FC<CardProps> = ({ robot }) => {
           <span className={styles.property}>Date:</span>
           <span className={styles.property__name}>
             {" "}
-            {robot.date.getDate().toString()} /{" "}
-            {robot.date.getMonth().toString()} /{" "}
-            {robot.date.getFullYear().toString()}
+            {robot.date.getDate()} / {robot.date.getMonth()} /{" "}
+            {robot.date.getFullYear()}
           </span>
         </div>
       </div>
