@@ -1,14 +1,13 @@
-import { Robot } from "../../model/robot.model";
+import { RobotResponse } from "../../model/robot.model";
 
 export const getRobotsList = async () => {
   const response = await fetch(
-    `https://two02301-w6chwe-back-enrique-lorena.onrender.com/api/v1/robots`,
-    {
-      method: "GET",
-      mode: "cors",
-    }
+    `https://two02301-w6chwe-back-enrique-lorena.onrender.com/api/v1/robots`
   );
-  const robotsList: Robot[] = await response.json();
+  const robotsList: RobotResponse[] = await response.json();
 
-  return robotsList;
+  return robotsList.map((robot) => ({
+    ...robot,
+    date: new Date(robot.date),
+  }));
 };
