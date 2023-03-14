@@ -1,27 +1,27 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getRobotsList } from "./cardlistAPI";
-import { Robot } from "../../model/robot.model";
 import { RootState } from "../../app/store";
+import { Robot, RobotResponse } from "../../model/robot.model";
+import { postRobot } from "./formAPI";
 
-export interface CardListState {
+export interface FormState {
   robots: Robot[];
   status: "idle" | "loading" | "failed";
 }
 
-const initialState: CardListState = {
+const initialState: FormState = {
   robots: [],
   status: "idle",
 };
 
-export const fetchRobots = createAsyncThunk(
-  "cardList/fetchRobots",
-  async () => {
-    const response = await getRobotsList();
+export const postNewRobot = createAsyncThunk(
+  "form/postNewRobot",
+  async (newRobot: RobotResponse) => {
+    const response = await postRobot(newRobot);
     return response;
   }
 );
 
-export const cardListSlice = createSlice({
+export const formSlice = createSlice({
   name: "cardList",
   initialState,
 
@@ -29,17 +29,17 @@ export const cardListSlice = createSlice({
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchRobots.pending, (state: { status: string }) => {
+      .addCase(postNewRobot.pending, (state: { status: string }) => {
         state.status = "loading";
       })
       .addCase(
-        fetchRobots.fulfilled,
+        postNewRobot.fulfilled,
         (state, action: PayloadAction<Robot[]>) => {
           state.status = "idle";
           state.robots = action.payload;
         }
       )
-      .addCase(fetchRobots.rejected, (state) => {
+      .addCase(postNewRobot.rejected, (state) => {
         state.status = "failed";
       });
   },
@@ -48,4 +48,4 @@ export const cardListSlice = createSlice({
 export const selectRobots = (state: RootState) => state.cardList.robots;
 export const selectStatus = (state: RootState) => state.cardList.status;
 
-export default cardListSlice.reducer;
+export default formSlice.reducer;

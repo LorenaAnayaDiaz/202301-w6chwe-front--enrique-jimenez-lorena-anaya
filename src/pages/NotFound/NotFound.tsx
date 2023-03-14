@@ -9,7 +9,7 @@ const NotFound = () => {
       <p className="text">Looks like you got lost on the dark side</p>
       <img
         className="image"
-        src="/assets/images/not-found.png"
+        src="./assets/images/not-found.png"
         alt="page error 404"
       />
       <Link className="text" data-testid="link" to={"/"}>

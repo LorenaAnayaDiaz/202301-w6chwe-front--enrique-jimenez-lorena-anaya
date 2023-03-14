@@ -1,0 +1,12 @@
+.form {
+  background-color: rgba(240, 248, 255, 0.472);
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  translate: 50%;
+}

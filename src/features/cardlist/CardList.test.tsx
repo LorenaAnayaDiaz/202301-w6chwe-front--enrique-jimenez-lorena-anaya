@@ -8,7 +8,7 @@ describe("Given a card list component", () => {
   beforeAll(() => server.listen());
   afterEach(() => server.resetHandlers());
   afterAll(() => server.close());
-  test("When the page is loaded, it should show a list of robots", async () => {
+  test("When the page is loaded, it should show a list of characters", async () => {
     render(
       <Provider store={store}>
         <CardList />
